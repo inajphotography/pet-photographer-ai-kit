@@ -11,8 +11,8 @@ Every part of your business gets a folder. Every decision gets written into a fi
 ## Start here
 
 1. Install the Claude desktop app from [claude.ai/download](https://claude.ai/download). Sign in and open the **Code** tab.
-2. Start a new session and paste: "Clone https://github.com/inajphotography/pet-photographer-ai-kit into my Documents folder, then open that folder so we can work in it."
-3. Type `/setup-check` (in Codex, say "run the setup check step"). Green ticks mean you're ready.
+2. Start a new session. Under the message box, check it says **This computer**, click **Choose folder** and pick **Documents**. Paste: "Clone https://github.com/inajphotography/pet-photographer-ai-kit into my Documents folder, then open that folder so we can work in it."
+3. Start a new session, click **Choose folder** and pick the **pet-photographer-ai-kit** folder. Type `/setup-check` (in Codex, say "run the setup check step"). Green ticks mean you're ready.
 4. Type `/context-file` (in Codex, "run the context file step"). This is step 1, and the most important one.
 
 ## The steps
