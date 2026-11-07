@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(bash scripts/preflight.sh)",
+      "Bash(git rev-parse --show-toplevel)",
+      "Bash(git ls-files*)",
+      "Bash(git check-ignore*)",
+      "Bash(git log*)",
+      "Bash(git status*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}
