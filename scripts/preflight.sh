@@ -54,7 +54,20 @@ if [ -n "$repo_root" ]; then
   fi
 fi
 
-# 5. Connected and up to date
+# 5. Your own copy, not Ina's shared one
+if [ -n "$repo_root" ] && origin_url=$(git remote get-url origin 2>/dev/null); then
+  case "$origin_url" in
+    *inajphotography/pet-photographer-ai-kit*)
+      if [ "${KIT_OWNER:-}" = "1" ]; then
+        pass "Ina's own copy of the kit"
+      else
+        fail "This is Ina's shared copy of the kit, not your own" "Make your own private copy first: on the kit's GitHub page click 'Use this template', then open YOUR copy"
+      fi ;;
+    *) pass "This is your own copy" ;;
+  esac
+fi
+
+# 6. Connected and up to date
 if [ -n "$repo_root" ] && git remote get-url origin >/dev/null 2>&1; then
   if GIT_TERMINAL_PROMPT=0 git fetch --quiet origin 2>/dev/null; then
     upstream=$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null)

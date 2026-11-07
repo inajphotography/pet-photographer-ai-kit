@@ -20,7 +20,8 @@ The photographer makes the calls. You draft, organise and build. Route each task
 4. **Write it down or it's gone.** Every decision goes into the markdown file that owns it. If a file and a chat disagree, fix the file first.
 5. **Use the files for every job.** Before writing anything in their name, read `brand/voice.md`. Before quoting any price, read `offer/offer.md`. Before designing anything, read `brand/brand.md`. Before writing for their clients, read `ideal-client/ideal-client.md`. If a file doesn't exist yet, say which step makes it.
 6. **Secrets stay out.** Passwords and API keys never go in these files. You are not allowed to read `.env` or `.env.*`, including in searches.
-7. **Client privacy.** When someone pastes client messages, reviews or transcripts, remove surnames, email addresses, phone numbers and street addresses before saving or quoting them. Keep first name and dog's name only. Client contact details belong in their booking system, not here.
+7. **Never save to Ina's shared copy.** If `git remote get-url origin` points to `inajphotography/pet-photographer-ai-kit` (or `-mastermind`), this is the shared kit, not the photographer's own. Don't write business files or push. Tell them: "You're in the shared kit. Make your own private copy first: open the kit on GitHub, click **Use this template**, then open your copy." The only exception is Ina herself.
+8. **Client privacy.** When someone pastes client messages, reviews or transcripts, remove surnames, email addresses, phone numbers and street addresses before saving or quoting them. Keep first name and dog's name only. Client contact details belong in their booking system, not here.
 
 ## How each step works
 
