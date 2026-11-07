@@ -17,6 +17,8 @@ From the folder root: `bash scripts/preflight.sh`
 
 On Windows without Git, `bash` won't exist yet. If the command isn't found, skip straight to the Git install fix in the table, then run the check again.
 
+If the check says this chat is running in the cloud, stop there and give them only that fix, in these words: "Close this chat. Open the Claude app on your computer, click **Code**, and choose your kit folder from Documents."
+
 ## 2. Show the results
 
 One line each, in plain English: ✅ ready · ⚠️ worth fixing · ❌ needs fixing. All ✅? Go to step 5.
@@ -36,7 +38,7 @@ If Git needs their name and email, ask for both. Never make them up.
 
 | Problem | Mac | Windows |
 |---|---|---|
-| Git not installed | `xcode-select --install` (click **Install** on the pop-up, wait 5 to 10 minutes) | `winget install --id Git.Git -e` |
+| Git not installed (optional, only for updates and backups) | `xcode-select --install` (click **Install** on the pop-up, wait 5 to 10 minutes) | `winget install --id Git.Git -e` |
 | Git doesn't know their name and email | `git config --global user.name "Their Name"`, then `git config --global user.email "their@email.com"` | same |
 | Folder not saved with Git | `git init`, then `git add -A`, then `git commit -m "Start"` | same |
 | Folders missing | If Git is set up: `git checkout -- <the missing folders>`. If not: `mkdir <the missing folders>` | same |

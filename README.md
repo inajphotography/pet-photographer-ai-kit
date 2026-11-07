@@ -10,8 +10,8 @@ Every part of your business gets a folder. Every decision gets written into a fi
 
 ## Start here
 
-0. **Get the kit.** In the Claude desktop app's Code tab, ask: "Clone https://github.com/inajphotography/pet-photographer-ai-kit into my Documents folder and open it." Want a private backup of your work on GitHub later? Click **Use this template** on this page to make your own private copy.
-1. Open this folder in the Claude desktop app (**Code** tab) or in Codex.
+0. **Download the kit:** [click here](https://github.com/inajphotography/pet-photographer-ai-kit/archive/refs/heads/main.zip). Open your Downloads folder, double-click the file, and drag the folder it makes into **Documents**.
+1. Open the **Claude app** (not the website), click **Code**, and choose that folder.
 2. Type `/setup-check` (in Codex, say "run the setup check step"). Green ticks mean you're ready.
 3. Type `/context-file` (in Codex, "run the context file step"). This is step 1, and the most important one.
 

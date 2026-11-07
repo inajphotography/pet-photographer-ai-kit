@@ -13,11 +13,16 @@ fail() { echo "FAIL  $1"; echo "      fix: $2"; fails=$((fails + 1)); }
 echo "Pet photographer AI kit: setup check"
 echo "------------------------------------"
 
-# 1. Git installed
+# 0. Running on your own computer, not in the cloud
+if [ "$(uname -s)" = "Linux" ] && case "$(pwd)" in /home/user*|/workspace*|/tmp*) true;; *) false;; esac; then
+  fail "This chat is running in the cloud, not on your computer" "Close it. Open the Claude app, click Code, and choose your kit folder from Documents"
+fi
+
+# 1. Git installed (optional: only needed for kit updates and backups)
 if command -v git >/dev/null 2>&1; then
   pass "Git installed"
 else
-  fail "Git is not installed" "Mac: run 'xcode-select --install'. Windows: install from https://git-scm.com/download/win"
+  warn "Git isn't installed (optional)" "Only needed for kit updates and backups. Mac: run 'xcode-select --install'"
 fi
 
 # 2. Git knows who you are (needed to save your work)
@@ -36,7 +41,7 @@ if [ -n "$repo_root" ] && [ -f "$repo_root/CLAUDE.md" ] && [ -f "$repo_root/scri
   cd "$repo_root" || exit 1
 elif [ -f "./CLAUDE.md" ] && [ -f "./scripts/preflight.sh" ]; then
   repo_root=$(pwd)
-  warn "Your business folder isn't saved with Git yet" "Ask Claude to 'set up Git in this folder' so your work is saved"
+  pass "You're inside your business folder"
 else
   fail "Not inside your business folder" "Open the pet-photographer-ai-kit folder in Claude Code"
 fi
