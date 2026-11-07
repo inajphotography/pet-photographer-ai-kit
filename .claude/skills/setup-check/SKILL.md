@@ -41,7 +41,7 @@ If Git needs their name and email, ask for both. Never make them up.
 | Folder not saved with Git | `git init`, then `git add -A`, then `git commit -m "Start"` | same |
 | Folders missing | If Git is set up: `git checkout -- <the missing folders>`. If not: `mkdir <the missing folders>` | same |
 | Updates waiting | `git pull` | same |
-| "This is Ina's shared copy" | No command. Walk them through it: open the kit's GitHub page, click the green **Use this template** button, choose **Create a new repository**, name it (e.g. `my-studio-ai`), choose **Private**, click **Create repository**. Then start a new session and choose their new repo. | same |
+| "Saved on this laptop only" (optional) | No command. If they want a backup, walk them through it: open the kit's GitHub page, click the green **Use this template** button, choose **Create a new repository**, name it (e.g. `my-studio-ai`), choose **Private**, click **Create repository**. Then start a new session and choose their new repo. | same |
 
 Then run the check again.
 

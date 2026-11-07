@@ -58,11 +58,7 @@ fi
 if [ -n "$repo_root" ] && origin_url=$(git remote get-url origin 2>/dev/null); then
   case "$origin_url" in
     *inajphotography/pet-photographer-ai-kit*)
-      if [ "${KIT_OWNER:-}" = "1" ]; then
-        pass "Ina's own copy of the kit"
-      else
-        fail "This is Ina's shared copy of the kit, not your own" "Make your own private copy first: on the kit's GitHub page click 'Use this template', then open YOUR copy"
-      fi ;;
+      warn "Your work is saved on this laptop only" "Want a private backup? Ask Claude to 'help me make my own private copy on GitHub'. You can keep going without it" ;;
     *) pass "This is your own copy" ;;
   esac
 fi

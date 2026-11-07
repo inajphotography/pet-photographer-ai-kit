@@ -10,7 +10,7 @@ Every part of your business gets a folder. Every decision gets written into a fi
 
 ## Start here
 
-0. **Make your own private copy first.** On this page, click the green **Use this template** button, then **Create a new repository**. Name it, choose **Private**, and click **Create repository**. Always work in your copy, never in this shared kit.
+0. **Get the kit.** In the Claude desktop app's Code tab, ask: "Clone https://github.com/inajphotography/pet-photographer-ai-kit into my Documents folder and open it." Want a private backup of your work on GitHub later? Click **Use this template** on this page to make your own private copy.
 1. Open this folder in the Claude desktop app (**Code** tab) or in Codex.
 2. Type `/setup-check` (in Codex, say "run the setup check step"). Green ticks mean you're ready.
 3. Type `/context-file` (in Codex, "run the context file step"). This is step 1, and the most important one.
