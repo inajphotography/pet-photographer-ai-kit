@@ -1,6 +1,6 @@
 ---
 name: setup-check
-description: Step 0. Checks this laptop and folder are ready for the kit (Git, the business folder, updates) and helps fix anything that isn't. Use when the person types /setup-check, says "am I ready", "check my setup", or before a live workshop.
+description: Step 0. Checks this computer and folder are ready for the kit (Git, the business folder, updates) and helps fix anything that isn't. Use when the person types /setup-check, says "am I ready", "check my setup", or before a live workshop.
 ---
 
 # Step 0: are you ready?
@@ -29,7 +29,7 @@ List what needs fixing, one line each. Then ask exactly this and wait:
 
 > **Want me to fix these for you?** Or I can give you one command at a time to run yourself.
 
-If Git needs their name and email, ask for both. Never make them up.
+If Git needs their name and email, ask for both. Never make them up. This is optional: if they'd rather skip it, say "That's fine, you're ready" and move on. It never stops them doing the workshop.
 
 ## 4. Fix it, their way
 
@@ -43,7 +43,7 @@ If Git needs their name and email, ask for both. Never make them up.
 | Folder not saved with Git | `git init`, then `git add -A`, then `git commit -m "Start"` | same |
 | Folders missing | If Git is set up: `git checkout -- <the missing folders>`. If not: `mkdir <the missing folders>` | same |
 | Updates waiting | `git pull` | same |
-| "Saved on this laptop only" (optional) | No command. If they want a backup, walk them through it: open the kit's GitHub page, click the green **Use this template** button, choose **Create a new repository**, name it (e.g. `my-studio-ai`), choose **Private**, click **Create repository**. Then start a new session and choose their new repo. | same |
+| "Saved on this computer only" (optional) | No command. If they want a backup, walk them through it: open the kit's GitHub page, click the green **Use this template** button, choose **Create a new repository**, name it (e.g. `my-studio-ai`), choose **Private**, click **Create repository**. Then start a new session and choose their new repo. | same |
 
 Then run the check again.
 

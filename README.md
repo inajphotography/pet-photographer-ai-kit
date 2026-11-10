@@ -19,7 +19,7 @@ Every part of your business gets a folder. Every decision gets written into a fi
 
 | Step | Type | You end up with |
 |---|---|---|
-| 0 | `/setup-check` | A laptop that's ready |
+| 0 | `/setup-check` | A computer that's ready |
 | 1 | `/context-file` | The file Claude reads first, every session |
 | 2 | `/ideal-client` | Who you're for, in detail |
 | 3 | `/offer-pricing` | Your real price list, and how booking works |

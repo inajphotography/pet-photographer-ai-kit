@@ -25,15 +25,6 @@ else
   warn "Git isn't installed (optional)" "Only needed for kit updates and backups. Mac: run 'xcode-select --install'"
 fi
 
-# 2. Git knows who you are (needed to save your work)
-if command -v git >/dev/null 2>&1; then
-  if [ -n "$(git config user.name)" ] && [ -n "$(git config user.email)" ]; then
-    pass "Git knows who you are ($(git config user.name))"
-  else
-    warn "Git doesn't know your name and email yet" "git config --global user.name \"Your Name\" then git config --global user.email \"you@example.com\""
-  fi
-fi
-
 # 3. Inside the kit folder
 repo_root=$(git rev-parse --show-toplevel 2>/dev/null)
 if [ -n "$repo_root" ] && [ -f "$repo_root/CLAUDE.md" ] && [ -f "$repo_root/scripts/preflight.sh" ]; then
@@ -59,11 +50,21 @@ if [ -n "$repo_root" ]; then
   fi
 fi
 
+# 2b. Git knows who you are (only matters if this folder saves versions with Git;
+#     the downloaded zip doesn't, so the check is skipped there)
+if command -v git >/dev/null 2>&1 && git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  if [ -n "$(git config user.name)" ] && [ -n "$(git config user.email)" ]; then
+    pass "Git knows who you are ($(git config user.name))"
+  else
+    warn "Git doesn't know your name and email yet (optional)" "Only needed to save versions of your folder. git config --global user.name \"Your Name\" then git config --global user.email \"you@example.com\""
+  fi
+fi
+
 # 5. Your own copy, not Ina's shared one
 if [ -n "$repo_root" ] && origin_url=$(git remote get-url origin 2>/dev/null); then
   case "$origin_url" in
     *inajphotography/pet-photographer-ai-kit*)
-      warn "Your work is saved on this laptop only" "Want a private backup? Ask Claude to 'help me make my own private copy on GitHub'. You can keep going without it" ;;
+      warn "Your work is saved on this computer only" "Want a private backup? Ask Claude to 'help me make my own private copy on GitHub'. You can keep going without it" ;;
     *) pass "This is your own copy" ;;
   esac
 fi
