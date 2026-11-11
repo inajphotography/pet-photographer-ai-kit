@@ -69,6 +69,19 @@ if [ -n "$repo_root" ] && origin_url=$(git remote get-url origin 2>/dev/null); t
   esac
 fi
 
+# 5b. A member's copy of Ina's kit can't send changes back to it
+if [ -n "$repo_root" ] && origin_url=$(git remote get-url origin 2>/dev/null); then
+  case "$origin_url" in
+    *inajphotography/pet-photographer-ai-kit*)
+      push_url=$(git remote get-url --push origin 2>/dev/null)
+      if [ "$push_url" = "no_push" ]; then
+        pass "Your copy can't send changes back to Ina's kit"
+      else
+        warn "Your copy could send changes back to Ina's kit" "git remote set-url --push origin no_push"
+      fi ;;
+  esac
+fi
+
 # 6. Connected and up to date
 if [ -n "$repo_root" ] && git remote get-url origin >/dev/null 2>&1; then
   if GIT_TERMINAL_PROMPT=0 git fetch --quiet origin 2>/dev/null; then
