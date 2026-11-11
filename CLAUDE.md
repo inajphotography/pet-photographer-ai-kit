@@ -64,3 +64,14 @@ If they correct something, fix the file and repeat the format.
 | 8 Keep it safe | `/security-check` | Nothing. A check for leaked passwords | |
 
 Each step reads the files from the steps before it. By step 6, Claude already knows your business, your client, your prices and your voice, so nobody re-explains anything.
+
+## Getting the latest kit
+
+When the person asks for the latest kit (or "update the kit", "get Ina's updates"), keep their work safe:
+
+1. Say in one line: "Saving your work, getting Ina's updates, then putting your work back."
+2. Run `git stash --include-untracked`, then `git pull`, then `git stash pop`.
+3. If `git stash pop` reports a clash, their version always wins: run `git checkout --theirs -- <each clashing file>`, then `git reset`, then `git stash drop`. Their ticks in `TODO.md` and their business files are theirs; never discard them.
+4. Finish with one plain line: what's new from Ina, and "your work is all still here".
+
+If `git pull` fails because the folder isn't a Git copy (they downloaded the zip), say so and point them to the setup page instead.
